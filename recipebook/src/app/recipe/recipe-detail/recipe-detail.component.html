@@ -1,0 +1,40 @@
+<mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        {{recipeItem.title}}
+      </mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [src]="recipeItem.imageUrl" [alt]="recipeItem.title">
+    <mat-card-content>
+        <mat-card-title>
+            description
+        </mat-card-title>
+      <p>{{recipeItem.description}}</p>
+        <mat-card-title>
+            Ingreadients      
+        </mat-card-title>
+    </mat-card-content>
+    <mat-card-actions>
+        <mat-form-field>
+          <mat-label>Mange recipe</mat-label>
+          <mat-select #selectop>
+              <mat-option (click)="addToShopList()">
+                to shopping list
+              </mat-option>
+              <mat-option (click)="editRecipe()">
+                edit recipe
+               </mat-option >
+               <mat-option (click)="deleteRecipe()">
+                delete recipe
+               </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-card-actions>
+    <mat-card-footer>
+      <mat-list>
+        <mat-list-item>
+            berger - 5 rs
+        </mat-list-item>
+      </mat-list>
+    </mat-card-footer>
+</mat-card>

@@ -1,0 +1,21 @@
+<mat-card  class="mb-4">
+    <form (ngSubmit)="save(f)" #f="ngForm" class="example-form">
+        <mat-form-field class="example-full-width w-100">
+          <input 
+          matInput 
+          placeholder="Ingredient name" 
+          name='name' 
+          ngModel>
+        </mat-form-field>
+        <mat-form-field class="example-full-width w-100">
+            <input 
+            matInput 
+            placeholder="amt" 
+            name="amt" 
+            ngModel>
+          </mat-form-field>
+        <button type="submit" mat-raised-button color="primary">{{editMode?"update":"save"}}</button>
+        <button type="button" mat-raised-button color="warn" *ngIf="editMode" (click)="delete()">delete</button>
+        <button type="button" mat-raised-button color="primary" (click)="clear()">clear</button>
+    </form>
+</mat-card>

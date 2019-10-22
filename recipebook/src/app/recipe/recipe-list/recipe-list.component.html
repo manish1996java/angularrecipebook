@@ -1,0 +1,8 @@
+<h3 class="text-white">ShopList</h3>
+<mat-divider></mat-divider>
+<a mat-raised-button color="primary" routerLink="new" class="my-3">SaveRecipe</a>
+
+<div class="mt-4" *ngIf="recipeList">
+  <app-recipe-item *ngFor="let item of recipeList;let i = index;" [index]='i' [recipeItem]="item"></app-recipe-item>    
+</div>
+

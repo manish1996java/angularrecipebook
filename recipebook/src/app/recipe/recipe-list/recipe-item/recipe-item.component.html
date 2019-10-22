@@ -1,0 +1,11 @@
+<div class="card mb-2" routerLinkActive="active" [routerLink]="index">
+  <div class="card-body p-3">
+    <div class="media">
+      <img [src]="recipeItem.imageUrl" class="mr-3 " style="height:64px;width:70px;" alt="">
+       <div class="media-body">
+        <h4 class="d-inline-block">{{recipeItem.title}}</h4>
+        <p class="text-truncate w-50 m-0">{{recipeItem.description}}</p>
+       </div>
+    </div>
+  </div>
+</div>

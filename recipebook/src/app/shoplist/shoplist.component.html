@@ -1,0 +1,7 @@
+<app-shoplist-edit ></app-shoplist-edit>
+<hr>
+<ul class="list-group">
+    <li class="list-group-item list-group-item-action" *ngFor="let ingr of ingredients;let i = index;" (click)="onEditIngredient(i)">
+        {{ingr.name}}  {{ingr.amt}}
+    </li>    
+</ul>

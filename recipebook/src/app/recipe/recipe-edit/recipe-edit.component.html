@@ -1,0 +1,49 @@
+<mat-card>
+  <form class="example-form container-fluid" [formGroup]="recipeForm">
+    <div class="">
+        <div class="button-group py-3">
+            <button mat-raised-button type="button" [disabled]="!this.recipeForm.valid" color="primary" (click)="save()" class="mr-2">save</button>  <button mat-raised-button (click)="delete()" type="button" color="warn"> delete</button>  
+        </div>
+        <div class="form-group">
+            <mat-form-field class="example-full-width container-fluid">
+              <input 
+              matInput 
+              placeholder="Recipe Title" 
+              formControlName="title">
+            </mat-form-field>
+          </div>
+          <div class="form-group">
+            <div class="input-group input-group-sm">
+              <div class="input-group-prepend">
+                <span class="input-group-text inputGroup-sizing-sm">Url</span>
+              </div>  
+              <input 
+              type="url"
+              class="form-control" 
+              placeholder="Enter Url" 
+              #imgUrl
+              formControlName="imageUrl">
+            </div>
+          </div>
+          <img mat-card-image class="px-3"  [src]="imgUrl.value" alt="">
+          <div class="form-group">
+              <mat-form-field class="example-full-width container-fluid">
+                <input 
+                matInput 
+                formControlName="description" 
+                placeholder="Description">
+              </mat-form-field>
+          </div>
+          <hr>
+          <div formArrayName="ingredients">
+            <h3>Ingredients</h3>
+            <button class="btn btn-primary" (click)="addIngredient()">Add ingredent</button>
+            <br>
+            <div class="form-group" *ngFor="let ingredent of this.recipeForm.get('ingredients')['controls'] ;let i = index;">
+              <input type="text" class="form-control" fromControlName="i">
+            </div>
+          </div>
+            <button type="button" type="button" (click)="clearForm()"  mat-raised-button color="warn">clear</button>
+      </div>
+    </form>
+</mat-card>
